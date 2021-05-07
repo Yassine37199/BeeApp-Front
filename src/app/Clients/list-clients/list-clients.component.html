@@ -1,5 +1,37 @@
-<div *ngFor="let client of clients">
-    <p>{{client.name}}</p>
-    <p>{{client.telephone}}</p>    
-    <p>{{client.dateCreation}}</p>
-</div>
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nom complet</th>
+        <th>CIN</th>
+        <th>Email</th>
+        <th>Ville</th>
+        <th>Gouvernorat</th>
+        <th>Adresse</th>
+        <th>Code Postal</th>
+        <th>Date de Naissance</th>
+        <th>Telephone</th>
+        <th>Date de Création</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let client of clients">
+        <td>{{ client.idClient }}</td>
+        <td>{{ client.name }}</td>
+        <td>{{client.cin}}</td>
+        <td>{{ client.email }}</td>
+        <td>{{client.ville}}</td>
+        <td>{{client.gouvernorat }}</td>
+        <td>{{client.adresse}}</td>
+        <td>{{ client.codePostal }}</td>
+        <td>{{client.dateNaissance}}</td>
+        <td>{{ client.telephone }}</td>
+        <td>{{client.dateCreation}}</td>
+        <td>
+            <button class="btn btn-primary">Modifier</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

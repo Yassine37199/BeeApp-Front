@@ -1,5 +1,5 @@
 export interface Client {
-    id : number;
+    id_client : number;
     name : string;
     cin : number;
     email : string;
