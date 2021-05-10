@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ClientService } from 'src/app/Services/client.service';
 import { Client } from 'src/app/Models/client';
+import { Router } from '@angular/router';
 
 @Component({ 
   selector: 'app-list-clients',
@@ -16,7 +17,7 @@ export class ListClientsComponent implements OnInit {
   
 
   dtTrigger : Subject<any> = new Subject<any>();
-  constructor(private clientservice : ClientService) { }
+  constructor(private clientservice : ClientService , private router : Router) { }
 
   ngOnInit(): void {
     this.getClients();
@@ -42,10 +43,16 @@ export class ListClientsComponent implements OnInit {
     )
   }
 
+
+  openUpdateClient(myObj) {
+    this.router.navigate(['update-client/' + myObj['idClient']])
+  }
+
   ngOnDestroy(): void  {
     this.dtTrigger.unsubscribe();
   }
 
+  
 
 
 }

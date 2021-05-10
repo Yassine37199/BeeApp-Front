@@ -1,0 +1,51 @@
+
+<div class="content-body">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Liste des Offres</h4>
+                        <button class="btn btn-success" [routerLink]="'/ajout-offre'">Ajouter un Offre</button>
+                        <div class="table-responsive">
+                            <table *ngIf="offres" class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Labelle</th>
+                                        <th>Débit</th>
+                                        <th>Actions</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let offre of offres">
+                                    <tr>
+                                        <td>{{offre.idOffre}}</td>
+                                        <td>{{offre.labelle}}</td>
+                                        <td>{{offre.debit}}</td>
+                                        <td>
+                                            <button  class="btn btn-primary" (click)="openUpdateOffre(offre)">Modifier</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Labelle</th>
+                                        <th>Débit</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <div *ngIf="!offres" class="alert alert-warning">
+                                <h2>Aucune Offre Trouvée</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>
