@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddClientComponent } from './Components/Client/add-client/add-client.component';
 import { ListClientsComponent } from './Components/Client/list-clients/list-clients.component';
 import { UpdateClientComponent } from './Components/Client/update-client/update-client.component';
+import { AddDemandesComponent } from './Components/Demande_Abonnement/add-demandes/add-demandes.component';
+import { ListDemandesComponent } from './Components/Demande_Abonnement/list-demandes/list-demandes.component';
+import { UpdateDemandesComponent } from './Components/Demande_Abonnement/update-demandes/update-demandes.component';
+import { AddModemComponent } from './Components/Modem/add-modem/add-modem.component';
+import { ListModemsComponent } from './Components/Modem/list-modems/list-modems.component';
 import { AddOffreComponent } from './Components/Offre/add-offre/add-offre.component';
 import { ListOffreComponent } from './Components/Offre/list-offre/list-offre.component';
 import { UpdateOffreComponent } from './Components/Offre/update-offre/update-offre.component';
@@ -15,6 +20,11 @@ const routes: Routes = [
    {path : 'list-offres' , component : ListOffreComponent},
    {path : 'ajout-offre' , component : AddOffreComponent },
    {path : 'update-offre/:id' , component : UpdateOffreComponent},
+   {path : 'list-demandes' , component : ListDemandesComponent},
+   {path : 'ajout-demande' , component : AddDemandesComponent },
+   {path : 'update-demande/:id' , component : UpdateDemandesComponent},
+   {path : 'list-modems' , component : ListModemsComponent},
+   {path : 'ajout-modem' , component : AddModemComponent },
 ];
 
 @NgModule({

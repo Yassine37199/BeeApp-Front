@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-validation">
+                        <form class="form-valide" #addForm="ngForm" (ngSubmit)="addModem(addForm)">
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label" for="loginConfig">Login Modem<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="loginConfig"  ngModel name="loginConfig" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label" for="mdpConfig">Mot de Passe<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="mdpConfig"  ngModel name="mdpConfig">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <div class="submit-button">
+                                    <button type="reset" class="btn btn-warning">Vider</button>
+                                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #/ container -->

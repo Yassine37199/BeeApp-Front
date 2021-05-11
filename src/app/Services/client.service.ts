@@ -20,6 +20,7 @@ export class ClientService {
   
   
   public getClient(idClient : number) : Observable<Client> {
+    let client : Client;
     return this.http.get<Client>(`${this.apiServerUrl}/client/${idClient}`);
   }
 

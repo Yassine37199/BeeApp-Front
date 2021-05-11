@@ -8,18 +8,20 @@
   @-ms-viewport {
     width: device-width; }
   
-  article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  article, aside, figcaption, figure, footer, header, hgroup, main section {
     display: block; }
   
-* {
+ .body-wrapper{
     margin: 0;
     font-family: "Roboto", sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #76838f;
     text-align: center;
-    background-color: #F3F3F9; }
+    }
+
+ 
   
   [tabindex="-1"]:focus {
     outline: 0 !important; }
+

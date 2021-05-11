@@ -1,0 +1,47 @@
+<div class="content-body">
+
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Liste des Modems</h4>
+                        <button class="btn btn-success" [routerLink]="'/ajout-modem'">
+                            <i style="padding-right : 5px" class="fa fa-plus"></i>Ajouter un Modem</button>
+                        <div class="table-responsive">
+                            <table *ngIf="modems" class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                    <tr>
+                                        <th>Login</th>
+                                        <th>Mot de Passe</th> 
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let modem of modems">
+                                    <tr>
+                                        <td>{{modem.loginConfig}}</td>
+                                        <td>{{modem.mdpConfig}}</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Login</th>
+                                        <th>Mot de Passe</th> 
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <div *ngIf="!modems" class="alert alert-warning">
+                                <h2>Aucun Modem Trouvé</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
+<!--**********************************
+    Content body end
+***********************************-->

@@ -1,4 +1,4 @@
-export interface demandeAbonnement {
+export interface DemandeAbonnement {
     idDemandeAbonnement? : number,
     frequencePaiement? : string,
     adresseInstallation? : string;
@@ -10,5 +10,4 @@ export interface demandeAbonnement {
     idClient? : number,
     idOffre? : number,
     idAgence? : number
-
 }

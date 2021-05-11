@@ -16,6 +16,9 @@ import { UpdateOffreComponent } from './Components/Offre/update-offre/update-off
 import { ListDemandesComponent } from './Components/Demande_Abonnement/list-demandes/list-demandes.component';
 import { AddDemandesComponent } from './Components/Demande_Abonnement/add-demandes/add-demandes.component';
 import { UpdateDemandesComponent } from './Components/Demande_Abonnement/update-demandes/update-demandes.component';
+import { ListModemsComponent } from './Components/Modem/list-modems/list-modems.component';
+import { AddModemComponent } from './Components/Modem/add-modem/add-modem.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { UpdateDemandesComponent } from './Components/Demande_Abonnement/update-
     UpdateOffreComponent,
     ListDemandesComponent,
     AddDemandesComponent,
-    UpdateDemandesComponent 
+    UpdateDemandesComponent,
+    ListModemsComponent,
+    AddModemComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
