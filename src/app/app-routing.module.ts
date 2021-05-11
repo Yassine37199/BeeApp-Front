@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddAgenceComponent } from './Components/Agence/add-agence/add-agence.component';
+import { ListAgencesComponent } from './Components/Agence/list-agences/list-agences.component';
+import { UpdateAgenceComponent } from './Components/Agence/update-agence/update-agence.component';
 import { AddClientComponent } from './Components/Client/add-client/add-client.component';
 import { ListClientsComponent } from './Components/Client/list-clients/list-clients.component';
 import { UpdateClientComponent } from './Components/Client/update-client/update-client.component';
@@ -25,6 +28,10 @@ const routes: Routes = [
    {path : 'update-demande/:id' , component : UpdateDemandesComponent},
    {path : 'list-modems' , component : ListModemsComponent},
    {path : 'ajout-modem' , component : AddModemComponent },
+   {path : 'list-agences' , component : ListAgencesComponent},
+   {path : 'ajout-agence' , component : AddAgenceComponent },
+   {path : 'update-agence/:id' , component : UpdateAgenceComponent},
+
 ];
 
 @NgModule({

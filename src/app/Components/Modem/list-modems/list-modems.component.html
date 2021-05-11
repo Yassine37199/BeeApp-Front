@@ -16,12 +16,14 @@
                                     <tr>
                                         <th>Login</th>
                                         <th>Mot de Passe</th> 
+                                        <th>Abonnement</th>
                                     </tr>
                                 </thead>
                                 <tbody *ngFor="let modem of modems">
                                     <tr>
                                         <td>{{modem.loginConfig}}</td>
                                         <td>{{modem.mdpConfig}}</td>
+                                        <td>{{modem.abonnement.idAbonnement}}</td>
                                     </tr>
                                 </tbody>
                                 <tfoot>

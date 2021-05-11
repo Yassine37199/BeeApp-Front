@@ -1,0 +1,14 @@
+tr {
+  cursor : pointer;
+}
+.blockquote mb-0 {
+  padding-bottom: 18px;
+}
+
+input {
+  margin: 15px;
+}
+
+.btn-success {
+  margin-top: 20px;
+}

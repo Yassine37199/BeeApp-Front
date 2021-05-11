@@ -1,3 +1,51 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Demande no {{demandeToDisplay?.idDemandeAbonnement}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" *ngIf="remarques">
+        <div *ngFor="let remarque of remarques">
+            <div class="card">
+                <div class="card-header">
+                 {{remarque.user.nom}} {{remarque.user.prenom}}
+                </div> 
+                <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{remarque.text}}</p>
+                    <footer class="blockquote-footer">{{remarque.dateCreation}}</footer>
+                </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="openFormModal(formcontent)">Ajouter une remarque</button>
+    </div>
+  </ng-template>
+
+
+  <ng-template #formcontent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-form">Ajouter une Remarque</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="addRemarque(addForm)">
+            <div class="form-group">
+              <label for="text">Texte</label>
+              <input type="text" ngModel class="form-control" id="text" name="text" aria-describedby="emailHelp" placeholder="Entrez le texte de la remarque...">
+            </div>
+            <button type="submit" class="btn btn-success">Ajouter</button>
+            <button type="reset" class="btn btn-warning">Vider</button>
+        </form>
+    </div>
+  </ng-template>
+
+
 <div class="content-body">
 
     <!-- row -->
@@ -30,7 +78,7 @@
                                     </tr>
                                 </thead>
                                 <tbody *ngFor="let demande of demandes">
-                                    <tr>
+                                    <tr (click)="open(content , demande)">
                                         <td>{{demande.frequencePaiement}}</td>
                                         <td>{{demande.adresseInstallation}}</td>
                                         <td>{{demande.ville}}</td>
@@ -43,6 +91,7 @@
                                         <td>{{demande.offre.labelle}}</td>
                                         <td>Agence</td>
                                         <td>
+                                            
                                             <button  class="btn btn-primary" (click)="openUpdateDemande(demande)">
                                                 <i class="fa fa-wrench"></i></button>
                                         </td>

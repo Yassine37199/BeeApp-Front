@@ -19,6 +19,14 @@ import { UpdateDemandesComponent } from './Components/Demande_Abonnement/update-
 import { ListModemsComponent } from './Components/Modem/list-modems/list-modems.component';
 import { AddModemComponent } from './Components/Modem/add-modem/add-modem.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { NgbModalModule, NgbModule, NgbToastModule} from '@ng-bootstrap/ng-bootstrap';
+import { ToastsContainer } from './Components/Toast-container/toasts-container.component';
+import { ListAgencesComponent } from './Components/Agence/list-agences/list-agences.component';
+import { AddAgenceComponent } from './Components/Agence/add-agence/add-agence.component';
+import { UpdateAgenceComponent } from './Components/Agence/update-agence/update-agence.component';
+import { ListRemarquesComponent } from './Components/Remarque/list-remarques/list-remarques.component';
+import { AddRemarqueComponent } from './Components/Remarque/add-remarque/add-remarque.component';
+
 
 @NgModule({
   declarations: [
@@ -36,13 +44,23 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     ListModemsComponent,
     AddModemComponent,
     NavbarComponent,
+    ToastsContainer,
+    ListAgencesComponent,
+    AddAgenceComponent,
+    UpdateAgenceComponent,
+    ListRemarquesComponent,
+    AddRemarqueComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     DataTablesModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+    NgbModalModule,
+    NgbToastModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

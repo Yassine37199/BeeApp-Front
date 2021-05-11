@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { DemandeAbonnement } from 'src/app/Models/demande-abonnement';
-import { ClientService } from 'src/app/Services/client.service';
 import { DemandeAbonnementService } from 'src/app/Services/demande-abonnement.service';
-import { Client } from 'src/app/Models/client';
-import { stringify } from '@angular/compiler/src/util';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { RemarqueService } from 'src/app/Services/remarque.service';
+import { Remarque } from 'src/app/Models/remarque';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-list-demandes',
@@ -17,10 +18,16 @@ export class ListDemandesComponent implements OnInit {
 
   dtOptions : DataTables.Settings = {};
   public demandes : DemandeAbonnement[];
+  closeResult = '';
+  demandeToDisplay : DemandeAbonnement
+  remarques : Remarque[];
   
 
   dtTrigger : Subject<any> = new Subject<any>();
-  constructor(private demandeservice : DemandeAbonnementService , private clientservice : ClientService, private router : Router) { }
+  constructor(private demandeservice : DemandeAbonnementService ,
+              private router : Router,
+              private modalService : NgbModal,
+              private remarqueservice : RemarqueService) { }
 
   ngOnInit(): void {
     this.getDemandes();
@@ -44,11 +51,60 @@ export class ListDemandesComponent implements OnInit {
         alert(error.message);
       }
     )
+
+    this.remarqueservice.getRemarques().subscribe(
+      (response : Remarque[]) => {
+        this.remarques = response;
+      }
+    )
   }
+
+ 
 
 
   openUpdateDemande(myObj) {
     this.router.navigate(['update-demande/' + myObj['idDemandeAbonnement']])
+  }
+
+
+  open(content , demande : DemandeAbonnement) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title' , size : 'lg' , centered : true}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+    this.demandeToDisplay = demande
+    console.log(this.remarques);
+  }
+
+  openFormModal(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-form' , size : 'lg' , centered : true}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+
+  public addRemarque(addForm : NgForm) : void {
+    this.remarqueservice.addRemarqueInDemande(addForm.value).subscribe(
+      (response : Remarque) => {
+        console.log(response);
+        this.remarqueservice.getRemarques();
+        this.router.navigate(['list-demandes'])
+      }
+    )
+  }
+
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 
 
