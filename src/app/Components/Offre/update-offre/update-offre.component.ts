@@ -33,6 +33,7 @@ export class UpdateOffreComponent implements OnInit {
 
 
 public onUpdateOffre(offre : Offre) : void {
+  if(window.confirm("Modifier cet Offre ?")){
       this.offreservice.updateOffre(this.id , offre).subscribe(
         (response : Offre) => {
           console.log(response);
@@ -43,6 +44,7 @@ public onUpdateOffre(offre : Offre) : void {
         }
       );
     }
+  }
 
 
 }

@@ -17,6 +17,7 @@ export class AddModemComponent implements OnInit {
   }
 
   public addModem(addForm : NgForm) : void {
+    if(window.confirm("Ajouter cette demande ?")){
     this.modemservice.addModem(addForm.value).subscribe(
       (response : Modem) => {
         console.log(response);
@@ -25,5 +26,6 @@ export class AddModemComponent implements OnInit {
       }
     )
   }
+}
 
 }

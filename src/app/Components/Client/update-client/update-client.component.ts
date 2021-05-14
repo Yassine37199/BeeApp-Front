@@ -33,6 +33,7 @@ export class UpdateClientComponent implements OnInit {
 
 
 public onUpdateClient(client : Client) : void {
+      if(window.confirm("Modifier ce client ?")){
       this.clientservice.updateClient(this.id , client).subscribe(
         (response : Client) => {
           console.log(response);
@@ -43,6 +44,7 @@ public onUpdateClient(client : Client) : void {
         }
       );
     }
+  }
 
 
 

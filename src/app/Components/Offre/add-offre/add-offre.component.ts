@@ -17,6 +17,7 @@ export class AddOffreComponent implements OnInit {
   }
 
   public addOffre(addForm : NgForm) : void {
+    if(window.confirm("Ajouter cet Offre ?")){
     this.offreservice.addOffre(addForm.value).subscribe(
       (response : Offre) => {
         console.log(response);
@@ -25,5 +26,6 @@ export class AddOffreComponent implements OnInit {
       }
     )
   }
+}
 
 }

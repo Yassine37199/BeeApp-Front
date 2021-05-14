@@ -33,6 +33,7 @@ export class UpdateAgenceComponent implements OnInit {
 
 
 public onUpdateAgence(agence : Agence) : void {
+     if(window.confirm("Modifier cet Agence ?")){
       this.agenceservice.updateAgence(this.id , agence).subscribe(
         (response : Agence) => {
           console.log(response);
@@ -43,5 +44,6 @@ public onUpdateAgence(agence : Agence) : void {
         }
       );
     }
+  }
 
 }

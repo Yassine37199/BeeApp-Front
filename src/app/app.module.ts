@@ -26,6 +26,9 @@ import { AddAgenceComponent } from './Components/Agence/add-agence/add-agence.co
 import { UpdateAgenceComponent } from './Components/Agence/update-agence/update-agence.component';
 import { ListRemarquesComponent } from './Components/Remarque/list-remarques/list-remarques.component';
 import { AddRemarqueComponent } from './Components/Remarque/add-remarque/add-remarque.component';
+import { ListAbonnementComponent } from './Components/Abonnement/list-abonnement/list-abonnement.component';
+import { AddAbonnementComponent } from './Components/Abonnement/add-abonnement/add-abonnement.component';
+import { UpdateAbonnementComponent } from './Components/Abonnement/update-abonnement/update-abonnement.component';
 
 
 @NgModule({
@@ -49,7 +52,10 @@ import { AddRemarqueComponent } from './Components/Remarque/add-remarque/add-rem
     AddAgenceComponent,
     UpdateAgenceComponent,
     ListRemarquesComponent,
-    AddRemarqueComponent
+    AddRemarqueComponent,
+    ListAbonnementComponent,
+    AddAbonnementComponent,
+    UpdateAbonnementComponent
   ],
   imports: [
     BrowserModule,

@@ -38,6 +38,7 @@ export class UpdateDemandesComponent implements OnInit {
 
 
 public onUpdateDemande(demande : DemandeAbonnement) : void {
+  if(window.confirm("Modifier cette demande ?")){
       this.demandeservice.updateDemande(this.id , demande).subscribe(
         (response : DemandeAbonnement) => {
           this.showSuccess();
@@ -50,6 +51,7 @@ public onUpdateDemande(demande : DemandeAbonnement) : void {
         }
       );
     }
+  }
 
 
 showSuccess() {

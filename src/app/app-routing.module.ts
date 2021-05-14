@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddAbonnementComponent } from './Components/Abonnement/add-abonnement/add-abonnement.component';
+import { ListAbonnementComponent } from './Components/Abonnement/list-abonnement/list-abonnement.component';
+import { UpdateAbonnementComponent } from './Components/Abonnement/update-abonnement/update-abonnement.component';
 import { AddAgenceComponent } from './Components/Agence/add-agence/add-agence.component';
 import { ListAgencesComponent } from './Components/Agence/list-agences/list-agences.component';
 import { UpdateAgenceComponent } from './Components/Agence/update-agence/update-agence.component';
@@ -31,6 +34,9 @@ const routes: Routes = [
    {path : 'list-agences' , component : ListAgencesComponent},
    {path : 'ajout-agence' , component : AddAgenceComponent },
    {path : 'update-agence/:id' , component : UpdateAgenceComponent},
+   {path : 'list-abonnements' , component : ListAbonnementComponent},
+   {path : 'ajout-abonnement' , component : AddAbonnementComponent },
+   {path : 'update-abonnement/:id' , component : UpdateAbonnementComponent},
 
 ];
 

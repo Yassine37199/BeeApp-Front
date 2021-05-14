@@ -14,6 +14,7 @@
                             <table *ngIf="modems" class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
+                                        <th>Modem No Série</th>
                                         <th>Login</th>
                                         <th>Mot de Passe</th> 
                                         <th>Abonnement</th>
@@ -21,6 +22,7 @@
                                 </thead>
                                 <tbody *ngFor="let modem of modems">
                                     <tr>
+                                        <td>{{modem.modemSN}}</td>
                                         <td>{{modem.loginConfig}}</td>
                                         <td>{{modem.mdpConfig}}</td>
                                         <td>{{modem.abonnement.idAbonnement}}</td>
@@ -28,8 +30,10 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>Modem No Série</th>
                                         <th>Login</th>
                                         <th>Mot de Passe</th> 
+                                        <th>Abonnement</th>
                                     </tr>
                                 </tfoot>
                             </table>

@@ -4,7 +4,9 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-validation">
-                        <form class="form-valide" #addForm="ngForm" (ngSubmit)="addClient(addForm)">
+                        <form class="form-valide" #addForm="ngForm" (ngSubmit)="addClient(addForm)">*
+
+
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="name">Nom Complet<span class="text-danger">*</span>
                                 </label>
@@ -12,32 +14,33 @@
                                     <input type="text" class="form-control" id="name"  ngModel name="name" placeholder="Entrez le nom complet du client...">
                                 </div>
                             </div>
+                           
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="cin">CIN<span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="number" class="form-control" id="cin"  ngModel name="cin" placeholder="Your valid email..">
+                                    <input type="number" class="form-control" id="cin"  ngModel name="cin" placeholder="Entrez le CIN du client..">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="email">Email<span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="email" class="form-control" id="email"  ngModel name="email" placeholder="Choose a safe one..">
+                                    <input type="email" class="form-control" id="email"  ngModel name="email" placeholder="Entrez l'Email du client..">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="ville">Ville<span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="ville"  ngModel name="ville" placeholder="..and confirm it!">
+                                    <input type="text" class="form-control" id="ville"  ngModel name="ville" placeholder="Entrez la ville du client..">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="gouvernorat">Gouvernorat<span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="gouvernorat"  ngModel name="gouvernorat" placeholder="..and confirm it!">
+                                    <input type="text" class="form-control" id="gouvernorat"  ngModel name="gouvernorat" placeholder="Entrez le gouvernorat du client..">
                                 </div>
                             </div>
                             
@@ -45,14 +48,14 @@
                                 <label class="col-lg-4 col-form-label" for="adresse">Adresse<span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <textarea class="form-control" id="adresse"  ngModel name="adresse" rows="5" placeholder="Entrez l'adresse compléte du client..."></textarea>
+                                    <textarea class="form-control" id="adresse"  ngModel name="adresse" rows="5" placeholder="Entrez l'adresse compléte du client.."></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="codePostal">Code Postal<span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="number" class="form-control" id="codePostal"  ngModel name="codePostal" placeholder="http://example.com">
+                                    <input type="number" class="form-control" id="codePostal"  ngModel name="codePostal" placeholder="Entrez le code postal du client..">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -66,7 +69,7 @@
                                 <label class="col-lg-4 col-form-label" for="telephone">Telephone<span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="tel" class="form-control" id="telephone" ngModel name="telephone" placeholder="5">
+                                    <input type="tel" class="form-control" id="telephone" ngModel name="telephone" placeholder="ex : 28412507">
                                 </div>
                             </div>
                             

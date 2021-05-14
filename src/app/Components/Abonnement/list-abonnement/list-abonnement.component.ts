@@ -1,54 +1,60 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import { DemandeAbonnement } from 'src/app/Models/demande-abonnement';
-import { DemandeAbonnementService } from 'src/app/Services/demande-abonnement.service';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { RemarqueService } from 'src/app/Services/remarque.service';
-import { Remarque } from 'src/app/Models/remarque';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable, Subject } from 'rxjs';
+import { Abonnement } from 'src/app/Models/abonnement';
+import { Remarque } from 'src/app/Models/remarque';
+import { AbonnementService } from 'src/app/Services/abonnement.service';
+import { RemarqueService } from 'src/app/Services/remarque.service';
 
 @Component({
-  selector: 'app-list-demandes',
-  templateUrl: './list-demandes.component.html',
-  styleUrls: ['./list-demandes.component.css']
+  selector: 'app-list-abonnement',
+  templateUrl: './list-abonnement.component.html',
+  styleUrls: ['./list-abonnement.component.css']
 })
-export class ListDemandesComponent implements OnInit {
+export class ListAbonnementComponent implements OnInit {
 
   dtOptions : DataTables.Settings = {};
-  public demandes : DemandeAbonnement[];
+  public abonnements : Abonnement[];
   closeResult = '';
-  demandeToDisplay : DemandeAbonnement
+  abonnementToDisplay : Abonnement;
   remarques : Remarque[];
   
 
   dtTrigger : Subject<any> = new Subject<any>();
-  constructor(private demandeservice : DemandeAbonnementService ,
+  constructor(private abonnementservice : AbonnementService ,
               private router : Router,
               private modalService : NgbModal,
               private remarqueservice : RemarqueService) { }
 
   ngOnInit(): void {
-    this.getDemandes();
+    this.getAbonnements();
     
   }
 
-  public getDemandes() : void {
+  public getAbonnements() : void {
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10,
 
     };
 
-    this.demandeservice.getDemandes().subscribe(
-      (response : DemandeAbonnement[]) => {
+    this.abonnementservice.getAbonnements().subscribe(
+      (response : Abonnement[]) => {
         console.log(response);
-        this.demandes = response;
+        this.abonnements = response;
         this.dtTrigger.next()
       },
       (error : HttpErrorResponse) => {
         alert(error.message);
+      }
+    )
+
+    this.remarqueservice.getRemarques().subscribe(
+      (response : Remarque[]) => {
+        this.remarques = response;
       }
     )
   }
@@ -56,19 +62,19 @@ export class ListDemandesComponent implements OnInit {
  
 
 
-  openUpdateDemande(myObj) {
-    this.router.navigate(['update-demande/' + myObj['idDemandeAbonnement']])
+  openUpdateAbonnement(myObj) {
+    this.router.navigate(['update-abonnement/' + myObj['idAbonnement']])
   }
 
 
-  open(content , demande : DemandeAbonnement) {
+  open(content , abonnement : Abonnement) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title' , size : 'lg' , centered : true}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
-    this.demandeToDisplay = demande
-    this.getRemarquesByDemande(this.demandeToDisplay.idDemandeAbonnement);
+    this.abonnementToDisplay = abonnement;
+    this.getRemarquesByAbonnement(this.abonnementToDisplay.idAbonnement);
     console.log(this.remarques);
   }
 
@@ -83,18 +89,18 @@ export class ListDemandesComponent implements OnInit {
 
   public addRemarque(addForm : NgForm) : void {
     if(window.confirm("Ajouter cette demande ?")){
-    this.remarqueservice.addRemarqueInDemande(addForm.value).subscribe(
+    this.remarqueservice.addRemarqueInAbonnement(addForm.value).subscribe(
       (response : Remarque) => {
         console.log(response);
         this.remarqueservice.getRemarques();
-        this.router.navigate(['list-demandes'])
+        this.router.navigate(['list-abonnements'])
       }
     )
   }
 }
 
-  public getRemarquesByDemande(idDemande : number){
-    this.remarqueservice.getRemarquesByDemande(idDemande).subscribe(
+  public getRemarquesByAbonnement(idAbonnement : number){
+    this.remarqueservice.getRemarquesByAbonnement(idAbonnement).subscribe(
       (response : Remarque[]) => this.remarques = response
     )
   }
@@ -114,6 +120,5 @@ export class ListDemandesComponent implements OnInit {
   ngOnDestroy(): void  {
     this.dtTrigger.unsubscribe();
   }
-
 
 }

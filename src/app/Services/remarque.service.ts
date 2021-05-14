@@ -17,11 +17,20 @@ export class RemarqueService {
   public getRemarques() : Observable<Remarque[]> {
     return this.http.get<Remarque[]>(`${this.apiServerUrl}/remarque/get/all`);
   }
+
+
+  public getRemarquesByDemande(idDemande : number) : Observable<Remarque[]> {
+    return this.http.get<Remarque[]>(`${this.apiServerUrl}/remarque/get/demande/${idDemande}`)
+  }
+
+  public getRemarquesByAbonnement(idAbonnement : number) : Observable<Remarque[]> {
+    return this.http.get<Remarque[]>(`${this.apiServerUrl}/remarque/get/abonnement/${idAbonnement}`)
+  } 
   
 
   // Ajouter Une Remarque au demande d'abonnement
   public addRemarqueInDemande(remarque : Remarque) : Observable<Remarque> {
-    return this.http.post<Remarque>(`${this.apiServerUrl}/remarque/adddem/15/1` , remarque);
+    return this.http.post<Remarque>(`${this.apiServerUrl}/remarque/adddem/7/1` , remarque);
   }
 
   // Ajouter Une Remarque au demande d'abonnement

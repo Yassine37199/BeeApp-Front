@@ -18,6 +18,7 @@ export class AddAgenceComponent implements OnInit {
   }
 
   public addAgence(addForm : NgForm) : void {
+    if(window.confirm("Ajouter cet Agence ?")){
     this.agenceservice.addAgence(addForm.value).subscribe(
       (response : Agence) => {
         console.log(response);
@@ -26,5 +27,6 @@ export class AddAgenceComponent implements OnInit {
       }
     )
   }
+}
 
 }

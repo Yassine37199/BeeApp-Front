@@ -1,6 +1,6 @@
 <ng-template #content let-modal>
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Demande no {{demandeToDisplay?.idDemandeAbonnement}}</h4>
+      <h4 class="modal-title" id="modal-basic-title">Abonnement no {{abonnementToDisplay?.idAbonnement}}</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -55,67 +55,46 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Liste des Demandes d'abonnements</h4>
-                        <button class="btn btn-success" [routerLink]="'/ajout-demande'">
-                            <i style="padding-right : 5px" class="fa fa-plus"></i>Ajouter une nouvelle demande</button>
+                        <h4 class="card-title">Liste des Abonnements</h4>
+                        <button class="btn btn-success" [routerLink]="'/ajout-abonnement'">
+                            <i style="padding-right : 5px" class="fa fa-plus"></i>Ajouter une nouvelle Abonnement</button>
                         <div class="table-responsive">
-                            <table *ngIf="demandes" class="table table-striped table-bordered zero-configuration">
+                            <table *ngIf="abonnements" class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Fréquance de Paiement</th>
-                                        <th>Adresse Installation</th>
-                                        <th>Ville</th>
-                                        <th>Gouvernorat</th>
-                                        <th>Etat</th>
-                                        <th>Tel ADSL</th>
-                                        <th>Type</th>
+                                        <th>Réf TT</th>
+                                        <th>Etat TT</th>
+                                        <th>Agence Livraison</th>
                                         <th>Date de Création</th>
-                                        <th>Client</th>
-                                        <th>Offre</th>
-                                        <th>Agence</th>
                                         <th>Actions</th>
                                         
                                     </tr>
                                 </thead>
-                                <tbody *ngFor="let demande of demandes">
-                                    <tr (click)="open(content , demande)">
-                                        <td>{{demande.frequencePaiement}}</td>
-                                        <td>{{demande.adresseInstallation}}</td>
-                                        <td>{{demande.ville}}</td>
-                                        <td>{{demande.gouvernorat}}</td>
-                                        <td>{{demande.etat}}</td>
-                                        <td>{{demande.telADSL}}</td>
-                                        <td>{{demande.typeDemande}}</td>
-                                        <td>{{demande.dateCreation}}</td>
-                                        <td>{{demande.client.name}}</td>
-                                        <td>{{demande.offre.labelle}}</td>
-                                        <td>Agence</td>
+                                <tbody *ngFor="let abonnement of abonnements">
+                                    <tr (click)="open(content , abonnement)">
+                                        <td>{{abonnement.refTT}}</td>
+                                        <td>{{abonnement.etatTT}}</td>
+                                        <td>{{abonnement.agenceLivraison}}</td>
+                                        <td>{{abonnement.dateCreation}}</td>
                                         <td>
                                             
-                                            <button  class="btn btn-primary" (click)="openUpdateDemande(demande)">
+                                            <button  class="btn btn-primary" (click)="openUpdateAbonnement(abonnement)">
                                                 <i class="fa fa-wrench"></i></button>
                                         </td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Fréquance de Paiement</th>
-                                        <th>Adresse Installation</th>
-                                        <th>Ville</th>
-                                        <th>Gouvernorat</th>
-                                        <th>Etat</th>
-                                        <th>Tel ADSL</th>
-                                        <th>Type</th>
+                                        <th>Réf TT</th>
+                                        <th>Etat TT</th>
+                                        <th>Agence Livraison</th>
                                         <th>Date de Création</th>
-                                        <th>Client</th>
-                                        <th>Offre</th>
-                                        <th>Agence</th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>
                             </table>
-                            <div *ngIf="!demandes" class="alert alert-warning">
-                                <h2>Aucune Demande Trouvé</h2>
+                            <div *ngIf="!abonnements" class="alert alert-warning">
+                                <h2>Aucune Abonnement Trouvée</h2>
                             </div>
                         </div>
                     </div>

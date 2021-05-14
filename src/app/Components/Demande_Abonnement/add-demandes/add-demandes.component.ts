@@ -17,6 +17,8 @@ export class AddDemandesComponent implements OnInit {
   }
 
   public addDemande(addForm : NgForm) : void {
+
+    if(window.confirm("Ajouter cette demande ?")){
     this.demandeservice.addDemande(addForm.value).subscribe(
       (response : DemandeAbonnement) => {
         console.log(response);
@@ -25,5 +27,6 @@ export class AddDemandesComponent implements OnInit {
       }
     )
   }
+}
 
 }

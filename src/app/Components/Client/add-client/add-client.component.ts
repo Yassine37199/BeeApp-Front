@@ -18,6 +18,7 @@ export class AddClientComponent implements OnInit {
 
   
   public addClient(addForm : NgForm) : void {
+    if (window.confirm("Ajouter ce client ? ")) {
     this.clientservice.addClients(addForm.value).subscribe(
       (response : Client) => {
         console.log(response);
@@ -26,5 +27,7 @@ export class AddClientComponent implements OnInit {
       }
     )
   }
+}
+
 
 }
