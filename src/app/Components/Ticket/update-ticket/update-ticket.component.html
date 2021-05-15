@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-validation">
+                        <form class="form-valide" #editForm="ngForm" >
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label" for="statut">Status<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statut"  ngModel="{{ticketToUpdate?.statut}}" name="statut" placeholder="Entrez le status du ticket...">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label" for="sujet">Sujet<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="sujet"  ngModel="{{ticketToUpdate?.sujet}}" name="sujet" placeholder="Entrer le sujet du ticket...">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label" for="type">Type<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="type"  ngModel="{{ticketToUpdate?.type}}" name="type" placeholder="Entrer le type du ticket...">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label" for="severite">Sevérité<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="severite"  ngModel="{{ticketToUpdate?.severite}}" name="severite" placeholder="Entrer la sevérité du ticket...">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label" for="statutN2">Status N2<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="statutN2"  ngModel="{{ticketToUpdate?.statutN2}}" name="statutN2" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="submit-button">
+                                    <button type="reset" class="btn btn-warning">Vider</button>
+                                    <button type="submit" class="btn btn-success" (click)="onUpdateTicket(editForm.value)">Modifier</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #/ container -->
+

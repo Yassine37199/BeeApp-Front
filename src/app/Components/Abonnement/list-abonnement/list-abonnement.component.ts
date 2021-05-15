@@ -67,6 +67,11 @@ export class ListAbonnementComponent implements OnInit {
   }
 
 
+  openListTickets(myObj) {
+    this.router.navigate(['list-tickets/' + myObj['idAbonnement']])
+  }
+
+
   open(content , abonnement : Abonnement) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title' , size : 'lg' , centered : true}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;

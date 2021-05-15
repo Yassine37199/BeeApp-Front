@@ -17,6 +17,9 @@ import { ListModemsComponent } from './Components/Modem/list-modems/list-modems.
 import { AddOffreComponent } from './Components/Offre/add-offre/add-offre.component';
 import { ListOffreComponent } from './Components/Offre/list-offre/list-offre.component';
 import { UpdateOffreComponent } from './Components/Offre/update-offre/update-offre.component';
+import { AddTicketComponent } from './Components/Ticket/add-ticket/add-ticket.component';
+import { ListTicketsComponent } from './Components/Ticket/list-tickets/list-tickets.component';
+import { UpdateTicketComponent } from './Components/Ticket/update-ticket/update-ticket.component';
 
 const routes: Routes = [
    {path : '' , redirectTo : '/list-clients' , pathMatch : 'full'},
@@ -37,6 +40,10 @@ const routes: Routes = [
    {path : 'list-abonnements' , component : ListAbonnementComponent},
    {path : 'ajout-abonnement' , component : AddAbonnementComponent },
    {path : 'update-abonnement/:id' , component : UpdateAbonnementComponent},
+   {path : 'list-tickets/:idAbonnement' , component : ListTicketsComponent},
+   {path : 'ajout-ticket/:idAbonnement' , component : AddTicketComponent },
+   {path : 'update-ticket/:id' , component : UpdateTicketComponent},
+
 
 ];
 

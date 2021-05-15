@@ -29,6 +29,9 @@ import { AddRemarqueComponent } from './Components/Remarque/add-remarque/add-rem
 import { ListAbonnementComponent } from './Components/Abonnement/list-abonnement/list-abonnement.component';
 import { AddAbonnementComponent } from './Components/Abonnement/add-abonnement/add-abonnement.component';
 import { UpdateAbonnementComponent } from './Components/Abonnement/update-abonnement/update-abonnement.component';
+import { ListTicketsComponent } from './Components/Ticket/list-tickets/list-tickets.component';
+import { AddTicketComponent } from './Components/Ticket/add-ticket/add-ticket.component';
+import { UpdateTicketComponent } from './Components/Ticket/update-ticket/update-ticket.component';
 
 
 @NgModule({
@@ -55,7 +58,10 @@ import { UpdateAbonnementComponent } from './Components/Abonnement/update-abonne
     AddRemarqueComponent,
     ListAbonnementComponent,
     AddAbonnementComponent,
-    UpdateAbonnementComponent
+    UpdateAbonnementComponent,
+    ListTicketsComponent,
+    AddTicketComponent,
+    UpdateTicketComponent
   ],
   imports: [
     BrowserModule,

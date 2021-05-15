@@ -22,4 +22,19 @@ export class TicketService {
   public getTicket(idTicket : number) : Observable<Ticket> {
     return this.http.get<Ticket>(`${this.apiServerUrl}/ticket/get/${idTicket}`);
   }
+
+  public getTicketsByDemande(idAbonnement : number) : Observable<Ticket[]> {
+    return this.http.get<Ticket[]>(`${this.apiServerUrl}/ticket/get/abonnement/${idAbonnement}`);
+  }
+
+  // Ajouter Une Ticket
+  public addTicket(ticket : Ticket , idAbonnement : number) : Observable<Ticket> {
+    return this.http.post<Ticket>(`${this.apiServerUrl}/ticket/add/14/${idAbonnement}` , ticket);
+  }
+
+
+  // Modifier une Ticket
+  public updateTicket(idTicket : number , ticket : Ticket) : Observable<Ticket> {
+    return this.http.put<Ticket>(`${this.apiServerUrl}/ticket/update/${idTicket}` , ticket);
+  }
 }

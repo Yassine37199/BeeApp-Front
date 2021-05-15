@@ -40,7 +40,18 @@
                                 <label class="col-lg-4 col-form-label" for="gouvernorat">Gouvernorat<span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="gouvernorat"  ngModel name="gouvernorat" placeholder="Entrez le gouvernorat du client..">
+                                    <input
+                                    id="gouvernorat"
+                                    type="text"
+                                    class="form-control"
+                                    ngModel="gouvernorat"
+                                    name="gouvernorat"
+                                    placeholder="gouv"
+                                    [ngbTypeahead]="search"
+                                    (focus)="focus$.next($any($event).target.value)"
+                                    (click)="click$.next($any($event).target.value)"
+                                    #instance="ngbTypeahead"
+                                    /> 
                                 </div>
                             </div>
                             
