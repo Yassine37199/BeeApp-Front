@@ -46,7 +46,6 @@
                                     class="form-control"
                                     ngModel="gouvernorat"
                                     name="gouvernorat"
-                                    placeholder="gouv"
                                     [ngbTypeahead]="search"
                                     (focus)="focus$.next($any($event).target.value)"
                                     (click)="click$.next($any($event).target.value)"

@@ -32,6 +32,7 @@ import { UpdateAbonnementComponent } from './Components/Abonnement/update-abonne
 import { ListTicketsComponent } from './Components/Ticket/list-tickets/list-tickets.component';
 import { AddTicketComponent } from './Components/Ticket/add-ticket/add-ticket.component';
 import { UpdateTicketComponent } from './Components/Ticket/update-ticket/update-ticket.component';
+import { StatisticsComponent } from './Components/statistics/statistics.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { UpdateTicketComponent } from './Components/Ticket/update-ticket/update-
     UpdateAbonnementComponent,
     ListTicketsComponent,
     AddTicketComponent,
-    UpdateTicketComponent
+    UpdateTicketComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
