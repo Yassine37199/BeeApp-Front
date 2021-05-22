@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/Services/auth.service';
 import { UserService } from 'src/app/Services/user.service';
 
@@ -14,13 +15,15 @@ export class LoginComponent implements OnInit {
   password : string;
   invalidLogin = false;
   user;
+  closeResult = '';
 
   successMessage = "Authentication success";
   errorMessage = "Invalide username or password"
 
   constructor(private router : Router,
               private loginservice : AuthService,
-              private userservice : UserService) { }
+              private userservice : UserService,
+              private modalService : NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -31,8 +34,8 @@ export class LoginComponent implements OnInit {
         if(response) {
           if (this.password === response.password) {
             this.user = response
-            console.log(this.user.email);
-            this.loginservice.authenticate(this.username , this.password)
+            
+            this.loginservice.authenticate(this.username)
         } 
         else this.invalidLogin = true
         } 

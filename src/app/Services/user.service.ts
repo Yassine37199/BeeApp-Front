@@ -17,5 +17,9 @@ export class UserService {
     return this.http.get<User>(`${this.apiServerUrl}/user/get/email/${email}`);
   }
 
+  public addUser(user : User , idRole : number) : Observable<User> {
+    return this.http.post<User>(`${this.apiServerUrl}/user/add/${idRole}` , user);
+  }
+
 
 }
