@@ -30,12 +30,12 @@ export class RemarqueService {
 
   // Ajouter Une Remarque au demande d'abonnement
   public addRemarqueInDemande(remarque : Remarque) : Observable<Remarque> {
-    return this.http.post<Remarque>(`${this.apiServerUrl}/remarque/adddem/7/1` , remarque);
+    return this.http.post<Remarque>(`${this.apiServerUrl}/remarque/addDem/7/1` , remarque);
   }
 
   // Ajouter Une Remarque au demande d'abonnement
   public addRemarqueInAbonnement(remarque : Remarque) : Observable<Remarque> {
-    return this.http.post<Remarque>(`${this.apiServerUrl}/remarque/addabn/15/1` , remarque);
+    return this.http.post<Remarque>(`${this.apiServerUrl}/remarque/addAbn/15/1` , remarque);
   }
 
 }

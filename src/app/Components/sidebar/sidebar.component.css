@@ -4,7 +4,7 @@
     height: 100%;
     position: absolute;
     top: 5rem;
-    padding-top: 0;
+    padding-top: 15px;
     z-index: 99;
     background: #fff;
     transition: all .2s ease; }

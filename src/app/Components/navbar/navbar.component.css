@@ -1,3 +1,32 @@
+nav {
+  height : 10vh;
+  background-color: #0f3c4c;
+}
+
+.nav-link {
+  color: white !important;
+  margin-left: 15px;
+  
+}
+
 nav a {
     padding: 15px;
+    font-size: 18px;
+    opacity: 1;
   }
+
+.push-right {
+  margin-left: 60vw !important;
+}
+
+
+.dropdown-item {
+  font-size: 15px !important;
+}
+
+
+
+.logo {
+  width: 70%;
+  height: 50%;
+}

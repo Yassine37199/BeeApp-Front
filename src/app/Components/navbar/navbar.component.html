@@ -1,5 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">LOGO</a>
+<nav *ngIf="authservice.isUserLoggedIn()" class="navbar navbar-expand-lg navbar-light navbar">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/logo.png" [routerLink]="['/']" class="logo" alt="LOGO" />
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,11 +11,18 @@
           <a class="nav-link" href="#">Text<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Text</a>
+          <a class="nav-link" >Text</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Text</a>
+        <li class="nav-item dropdown push-right">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{user.nom}} {{user.prenom}}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Modifier Profil</a></li>
+            <li><a class="dropdown-item"[routerLink]="['/logout']">Déconnexion</a></li>
+          </ul>
         </li>
       </ul>
+      
     </div>
   </nav>

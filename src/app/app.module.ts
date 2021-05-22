@@ -33,6 +33,8 @@ import { ListTicketsComponent } from './Components/Ticket/list-tickets/list-tick
 import { AddTicketComponent } from './Components/Ticket/add-ticket/add-ticket.component';
 import { UpdateTicketComponent } from './Components/Ticket/update-ticket/update-ticket.component';
 import { StatisticsComponent } from './Components/statistics/statistics.component';
+import { LoginComponent } from './Components/login/login.component';
+import { LogoutComponent } from './Components/logout/logout.component';
 
 
 @NgModule({
@@ -63,7 +65,9 @@ import { StatisticsComponent } from './Components/statistics/statistics.componen
     ListTicketsComponent,
     AddTicketComponent,
     UpdateTicketComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
