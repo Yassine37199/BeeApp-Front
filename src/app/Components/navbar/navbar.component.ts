@@ -9,12 +9,12 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  user : User;
+  user = JSON.parse(sessionStorage.getItem('user'));
 
   constructor(public authservice : AuthService) { }
 
   ngOnInit(): void {
-    this.user = JSON.parse(sessionStorage.getItem('user'));
+    
   }
 
 

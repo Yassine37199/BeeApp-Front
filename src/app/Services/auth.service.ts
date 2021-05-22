@@ -9,6 +9,7 @@ import { UserService } from './user.service';
 export class AuthService {
 
   user : User;
+  isLoggedIn = false;
 
   constructor(private userservice : UserService , private router : Router) {
    }
@@ -26,8 +27,7 @@ export class AuthService {
     }
 
   isUserLoggedIn(){
-    let user = sessionStorage.getItem('user')
-    return user;
+    return JSON.parse(sessionStorage.getItem('user'));
   }
 
   logout(){

@@ -12,6 +12,7 @@ import { UpdateClientComponent } from './Components/Client/update-client/update-
 import { AddDemandesComponent } from './Components/Demande_Abonnement/add-demandes/add-demandes.component';
 import { ListDemandesComponent } from './Components/Demande_Abonnement/list-demandes/list-demandes.component';
 import { UpdateDemandesComponent } from './Components/Demande_Abonnement/update-demandes/update-demandes.component';
+import { InactivePageComponent } from './Components/inactive-page/inactive-page.component';
 import { LoginComponent } from './Components/login/login.component';
 import { LogoutComponent } from './Components/logout/logout.component';
 import { AddModemComponent } from './Components/Modem/add-modem/add-modem.component';

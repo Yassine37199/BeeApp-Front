@@ -35,6 +35,7 @@ import { UpdateTicketComponent } from './Components/Ticket/update-ticket/update-
 import { StatisticsComponent } from './Components/statistics/statistics.component';
 import { LoginComponent } from './Components/login/login.component';
 import { LogoutComponent } from './Components/logout/logout.component';
+import { InactivePageComponent } from './Components/inactive-page/inactive-page.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { LogoutComponent } from './Components/logout/logout.component';
     UpdateTicketComponent,
     StatisticsComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    InactivePageComponent
   ],
   imports: [
     BrowserModule,
