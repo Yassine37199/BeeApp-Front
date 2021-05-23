@@ -17,6 +17,10 @@ export class RoleService {
   public getRoles() : Observable<Role[]> {
     return this.http.get<Role[]>(`${this.apiServerUrl}/roles/list`);
   }
+
+  public getRole(idRole : number) : Observable<Role> {
+    return this.http.get<Role>(`${this.apiServerUrl}/roles/${idRole}`);
+  }
   
 
   public addRole(role : Role) : Observable<Role> {

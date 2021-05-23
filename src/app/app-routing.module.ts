@@ -20,9 +20,17 @@ import { ListModemsComponent } from './Components/Modem/list-modems/list-modems.
 import { AddOffreComponent } from './Components/Offre/add-offre/add-offre.component';
 import { ListOffreComponent } from './Components/Offre/list-offre/list-offre.component';
 import { UpdateOffreComponent } from './Components/Offre/update-offre/update-offre.component';
+import { AjoutRoleComponent } from './Components/Role/ajout-role/ajout-role.component';
+import { ListRoleComponent } from './Components/Role/list-role/list-role.component';
+import { UpdateRoleComponent } from './Components/Role/update-role/update-role.component';
 import { AddTicketComponent } from './Components/Ticket/add-ticket/add-ticket.component';
 import { ListTicketsComponent } from './Components/Ticket/list-tickets/list-tickets.component';
 import { UpdateTicketComponent } from './Components/Ticket/update-ticket/update-ticket.component';
+import { Error404PageComponent } from './Components/Unauthorized/error404-page/error404-page.component';
+import { UnauthPageComponent } from './Components/Unauthorized/unauth-page/unauth-page.component';
+import { AjoutUserComponent } from './Components/User/ajout-user/ajout-user.component';
+import { ListUsersComponent } from './Components/User/list-users/list-users.component';
+import { UpdateUsersComponent } from './Components/User/update-users/update-users.component';
 import { AuthGuardService } from './Services/auth-guard.service';
 
 const routeValid = false;
@@ -35,29 +43,39 @@ if (routeValid) {
 
 
 const routes: Routes = [
-{path : '' , redirectTo : '/list-clients' , pathMatch : 'full', data : {active : 'active'}},
-{path : 'list-clients' , component : ListClientsComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'ajout-client' , component : AddClientComponent , canActivate:[AuthGuardService], data : {active : 'active'} },
-{path : 'update-client/:id' , component : UpdateClientComponent , canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'list-offres' , component : ListOffreComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'ajout-offre' , component : AddOffreComponent, canActivate:[AuthGuardService] , data : {active : 'active'}},
-{path : 'update-offre/:id' , component : UpdateOffreComponent, canActivate:[AuthGuardService] , data : {active : 'active'}},
-{path : 'list-demandes' , component : ListDemandesComponent, canActivate:[AuthGuardService] , data : {active : 'active'}},
-{path : 'ajout-demande' , component : AddDemandesComponent, canActivate:[AuthGuardService], data : {active : 'active'} },
-{path : 'update-demande/:id' , component : UpdateDemandesComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'list-modems' , component : ListModemsComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'ajout-modem' , component : AddModemComponent, canActivate:[AuthGuardService], data : {active : 'active'} },
-{path : 'list-pdv' , component : ListAgencesComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'ajout-pdv' , component : AddAgenceComponent, canActivate:[AuthGuardService] , data : {active : 'active'}},
-{path : 'update-pdv/:id' , component : UpdateAgenceComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'list-abonnements' , component : ListAbonnementComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'ajout-abonnement' , component : AddAbonnementComponent, canActivate:[AuthGuardService] , data : {active : 'active'}},
-{path : 'update-abonnement/:id' , component : UpdateAbonnementComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'list-tickets/:idAbonnement' , component : ListTicketsComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
-{path : 'ajout-ticket/:idAbonnement' , component : AddTicketComponent, canActivate:[AuthGuardService], data : {active : 'active'} },
-{path : 'update-ticket/:id' , component : UpdateTicketComponent, canActivate:[AuthGuardService], data : {active : 'active'}},
+{path : '' , redirectTo : '/list-clients' , pathMatch : 'full'},
+{path : 'list-clients' , component : ListClientsComponent, canActivate:[AuthGuardService], data : {}},
+{path : 'ajout-client' , component : AddClientComponent , canActivate:[AuthGuardService], data : {} },
+{path : 'update-client/:id' , component : UpdateClientComponent , canActivate:[AuthGuardService], data : {}},
+{path : 'list-offres' , component : ListOffreComponent, canActivate:[AuthGuardService], data : {}},
+{path : 'ajout-offre' , component : AddOffreComponent, canActivate:[AuthGuardService] , data : {}},
+{path : 'update-offre/:id' , component : UpdateOffreComponent, canActivate:[AuthGuardService] , data : {}},
+{path : 'list-demandes' , component : ListDemandesComponent, canActivate:[AuthGuardService] , data : {}},
+{path : 'ajout-demande' , component : AddDemandesComponent, canActivate:[AuthGuardService], data : {} },
+{path : 'update-demande/:id' , component : UpdateDemandesComponent, canActivate:[AuthGuardService], data : {}},
+{path : 'list-modems' , component : ListModemsComponent, canActivate:[AuthGuardService], data : {}},
+{path : 'ajout-modem' , component : AddModemComponent, canActivate:[AuthGuardService], data : {} },
+{path : 'list-pdv' , component : ListAgencesComponent, canActivate:[AuthGuardService], data : {}},
+{path : 'ajout-pdv' , component : AddAgenceComponent, canActivate:[AuthGuardService] , data : {}},
+{path : 'update-pdv/:id' , component : UpdateAgenceComponent, canActivate:[AuthGuardService], data : {}},
+{path : 'list-abonnements' , component : ListAbonnementComponent, canActivate:[AuthGuardService], data : {}},
+{path : 'ajout-abonnement' , component : AddAbonnementComponent, canActivate:[AuthGuardService] , data : {}},
+{path : 'update-abonnement/:id' , component : UpdateAbonnementComponent, canActivate:[AuthGuardService], data : {}},
+{path : 'list-tickets/:idAbonnement' , component : ListTicketsComponent, canActivate:[AuthGuardService], data : {}},
+{path : 'ajout-ticket/:idAbonnement' , component : AddTicketComponent, canActivate:[AuthGuardService], data : {} },
+{path : 'update-ticket/:id' , component : UpdateTicketComponent, canActivate:[AuthGuardService], data : {}},
 {path : 'login' , component : LoginComponent},
 {path : 'logout' , component : LogoutComponent, canActivate:[AuthGuardService]},
+{path : 'ajout-role' , component: AjoutRoleComponent , canActivate:[AuthGuardService] , data:{roles : ['admin']}},
+{path : 'list-roles' , component : ListRoleComponent ,  canActivate:[AuthGuardService] , data:{roles : ['admin']}},
+{path : 'update-role' , component: UpdateRoleComponent , canActivate:[AuthGuardService] , data:{roles : ['admin']}},
+{path : 'list-users' , component: ListUsersComponent , canActivate:[AuthGuardService] , data:{roles : ['admin']}},
+{path : 'ajout-user' , component: AjoutUserComponent , canActivate:[AuthGuardService] , data:{roles : ['admin']}},
+{path : 'update-user' , component: UpdateUsersComponent , canActivate:[AuthGuardService] , data:{roles : ['admin']}},
+{path : 'unauthorized' , component : UnauthPageComponent , canActivate:[AuthGuardService]},
+{path : 'error404' , component : Error404PageComponent},
+{path : '**' , redirectTo : '/error404'},
+
 ]
 
 @NgModule({

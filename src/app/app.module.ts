@@ -36,12 +36,11 @@ import { StatisticsComponent } from './Components/statistics/statistics.componen
 import { LoginComponent } from './Components/login/login.component';
 import { LogoutComponent } from './Components/logout/logout.component';
 import { InactivePageComponent } from './Components/inactive-page/inactive-page.component';
-import { AjoutRoleComponent } from './Component/ajout-role/ajout-role.component';
-import { AjoutUserComponent } from './Component/ajout-user/ajout-user.component';
-import { ListUsersComponent } from './Components/User/list-users/list-users.component';
-import { UpdateUsersComponent } from './Components/User/update-users/update-users.component';
+import { AjoutRoleComponent } from './Components/Role/ajout-role/ajout-role.component';
+import { AjoutUserComponent } from './Components/User/ajout-user/ajout-user.component';
 import { UpdateRoleComponent } from './Components/Role/update-role/update-role.component';
-import { ListRoleComponent } from './Components/Role/list-role/list-role.component';
+import { UnauthPageComponent } from './Components/Unauthorized/unauth-page/unauth-page.component';
+import { Error404PageComponent } from './Components/Unauthorized/error404-page/error404-page.component';
 
 
 @NgModule({
@@ -78,10 +77,9 @@ import { ListRoleComponent } from './Components/Role/list-role/list-role.compone
     InactivePageComponent,
     AjoutRoleComponent,
     AjoutUserComponent,
-    ListUsersComponent,
-    UpdateUsersComponent,
     UpdateRoleComponent,
-    ListRoleComponent
+    UnauthPageComponent,
+    Error404PageComponent
   ],
   imports: [
     BrowserModule,
