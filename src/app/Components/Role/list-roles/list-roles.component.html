@@ -1,0 +1,50 @@
+
+<div class="content-body">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Liste des Roles</h4>
+                        <button class="btn btn-success" [routerLink]="'/ajout-role'">
+                            <i style="padding-right : 5px" class="fa fa-plus"></i>Ajouter un Role</button>
+                        <div class="table-responsive">
+                            <table *ngIf="roles" class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Role</th>
+                                        <th>Actions</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let role of roles">
+                                    <tr>
+                                        <td>{{role.id}}</td>
+                                        <td>{{role.nomrole}}</td>
+                                        <td>
+                                            <button  class="btn btn-primary" (click)="openUpdateRole(role)">
+                                                <i class="fa fa-wrench"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Role</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <div *ngIf="!roles" class="alert alert-warning">
+                                <h2>Aucun Role Trouvé</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>

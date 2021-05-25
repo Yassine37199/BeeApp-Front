@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListClientsComponent } from './Components/Client/list-clients/list-clients.component';
 import { AddClientComponent } from './Components/Client/add-client/add-client.component';
-import { SidebarComponent } from './Components/sidebar/sidebar.component';
+import { SidebarComponent } from './Components/sidebar/sidebar.component'; 
 import { FormsModule } from '@angular/forms';
 import { UpdateClientComponent } from './Components/Client/update-client/update-client.component';
 import { ListOffreComponent } from './Components/Offre/list-offre/list-offre.component';
@@ -32,7 +32,6 @@ import { UpdateAbonnementComponent } from './Components/Abonnement/update-abonne
 import { ListTicketsComponent } from './Components/Ticket/list-tickets/list-tickets.component';
 import { AddTicketComponent } from './Components/Ticket/add-ticket/add-ticket.component';
 import { UpdateTicketComponent } from './Components/Ticket/update-ticket/update-ticket.component';
-import { StatisticsComponent } from './Components/statistics/statistics.component';
 import { LoginComponent } from './Components/login/login.component';
 import { LogoutComponent } from './Components/logout/logout.component';
 import { InactivePageComponent } from './Components/inactive-page/inactive-page.component';
@@ -41,6 +40,11 @@ import { AjoutUserComponent } from './Components/User/ajout-user/ajout-user.comp
 import { UpdateRoleComponent } from './Components/Role/update-role/update-role.component';
 import { UnauthPageComponent } from './Components/Unauthorized/unauth-page/unauth-page.component';
 import { Error404PageComponent } from './Components/Unauthorized/error404-page/error404-page.component';
+import { StatisticsComponent } from './Components/statistics/statistics.component';
+import { RouterModule } from '@angular/router';
+import { ListRolesComponent } from './Components/Role/list-roles/list-roles.component';
+import { ListUserComponent } from './Components/User/list-user/list-user.component';
+import { ListReclamationComponent } from './Components/Reclamation/list-reclamation/list-reclamation.component';
 
 
 @NgModule({
@@ -79,7 +83,10 @@ import { Error404PageComponent } from './Components/Unauthorized/error404-page/e
     AjoutUserComponent,
     UpdateRoleComponent,
     UnauthPageComponent,
-    Error404PageComponent
+    Error404PageComponent,
+    ListRolesComponent,
+    ListUserComponent,
+    ListReclamationComponent
   ],
   imports: [
     BrowserModule,
@@ -89,6 +96,7 @@ import { Error404PageComponent } from './Components/Unauthorized/error404-page/e
     FormsModule,
     NgbModule,
     NgbModalModule,
+    RouterModule,
     NgbToastModule
 
   ],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Role } from 'src/app/Models/role';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
@@ -8,9 +9,13 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class SidebarComponent implements OnInit {
 
+  role;
+
   constructor(public authservice : AuthService) { }
 
   ngOnInit(): void {
+    this.role = JSON.parse(sessionStorage.getItem('user')).role.nomrole;
+    
   }
 
 }

@@ -1,8 +1,28 @@
 <div *ngIf="authservice.isUserLoggedIn() !== null" class="nk-sidebar">           
     <div class="nk-nav-scroll">
         <ul class="metismenu" id="menu">
-            <li class="nav-label">Clients</li>
-            <li class="nav-label">Offres</li>
+            <li 
+                class="nav-label"
+                [routerLink]="['/list-clients']"
+                *ngIf="role ==='admin' || role === 'agent Backoffice'">Clients</li>
+            <li class="nav-label"
+                [routerLink]="['/list-offres']"
+                *ngIf="role ==='admin'">Offres</li>
+            <li class="nav-label"
+                [routerLink]="['/list-demandes']"
+                *ngIf="role ==='admin' || role === 'agent Backoffice'">Demandes d'Abonnements</li>
+            <li class="nav-label"
+                [routerLink]="['/list-abonnements']"
+                >Abonnements</li>
+            <li class="nav-label"
+                [routerLink]="['/list-pdv']"
+                *ngIf="role ==='admin'">Point ventes</li>
+            <li class="nav-label"
+                [routerLink]="['/list-users']"
+                *ngIf="role ==='admin'">Comptes</li>
+            <li class="nav-label"
+                [routerLink]="['/list-roles']"
+                *ngIf="role ==='admin'">Roles</li>
         </ul>
     </div>
 </div>

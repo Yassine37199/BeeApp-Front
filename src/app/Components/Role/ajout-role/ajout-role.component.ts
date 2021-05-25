@@ -22,7 +22,7 @@ export class AjoutRoleComponent implements OnInit {
       (response : Role) => {
         console.log(response);
         this.roleservice.getRoles();
-        this.router.navigate(['list-users'])
+        this.router.navigate(['list-roles'])
       }
     )
   }

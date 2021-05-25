@@ -100,6 +100,12 @@ overflow: visible !important; }
 .nav-label {
 padding: 0.8125rem 1.5625rem;
 text-transform: uppercase;
-font-size: 0.75rem;
+font-size: 0.95rem;
 letter-spacing: 0.05rem;
-color: #abafb3; }
+color: #000 !important;
+ }
+ 
+.metismenu li:hover {
+  cursor: pointer;
+  color : blue !important;
+}
